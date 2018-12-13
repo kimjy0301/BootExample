@@ -8,7 +8,11 @@ import org.springframework.data.repository.query.Param;
 import com.BootExample.Model.Report;
 
 public interface ReportDAO extends JpaRepository<Report, Integer>{	
+
+	List<Report> findByPatNo(@Param("patNo") String patNo);
+
+	List<Report> findByPatName(@Param("patName") String patName);
 	
-	List<Report> findByPatNo(@Param("examTm") String examTm);
+	List<Report> findByExamTm(@Param("examTm") String examTm);
 	
 }

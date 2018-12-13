@@ -17,13 +17,23 @@ public class ReportController {
 	private ReportDAO reportDAO;
 
 	@RequestMapping("/reportList")
-	public List<Report> list(Model model) {
+	public List<Report> reportList(Model model) {
 
-		List<Report> helloList = reportDAO.findAll();
-		
-		List<Report> reportList222 = reportDAO.findByPatNo("2100215831");
-		
+		List<Report> reportList222 = reportDAO.findByPatNo("2109000111");
 
+		return reportList222;
+	}
+
+	@RequestMapping("/reportList2")
+	public List<Report> reportList2(Model model) {
+
+		List<Report> reportList222 = reportDAO.findByPatName("배오근");
+		return reportList222;
+	}
+	@RequestMapping("/reportList3")
+	public List<Report> reportList3(Model model) {
+
+		List<Report> reportList222 = reportDAO.findByExamTm("20171015103308");
 		return reportList222;
 	}
 
